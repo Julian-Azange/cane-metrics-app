@@ -1,0 +1,32 @@
+ion-card {
+    margin: 20px;
+}
+
+ion-card-header {
+    background-color: #4caf50;
+}
+
+ion-card-title {
+    font-weight: bold;
+}
+
+ion-item {
+    margin-bottom: 10px;
+}
+
+ion-button {
+    margin-top: 20px;
+}
+
+.small-text {
+    font-size: smaller;
+}
+
+.logo-image {
+    width: 40px;
+    /* Ancho deseado de la imagen */
+    height: auto;
+    /* Altura automática para mantener la proporción */
+    margin-right: 10px;
+    /* Espacio a la derecha del logo */
+}

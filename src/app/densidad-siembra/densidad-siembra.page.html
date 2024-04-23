@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar color="gray">
+    <ion-title>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="auto">
+          <img src="../../assets/logo.png" alt="Logo de CaneMetrics" class="logo-image">
+        </ion-col>
+        <ion-col>CaneMetrics</ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Cálculo de Densidad de Siembra</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Distancia entre calles (m)</ion-label>
+        <ion-input type="number" [(ngModel)]="distanciaCalles"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Distancia entre plantas (m)</ion-label>
+        <ion-input type="number" [(ngModel)]="distanciaPlantas"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Área en metros cuadrados (m²)</ion-label>
+        <ion-input type="number" [(ngModel)]="areaMetrosCuadrados"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Variedad de caña</ion-label>
+        <ion-input type="text" [(ngModel)]="variedadCana"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" (click)="calcularDensidad()">Calcular</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="densidadSiembra !== null">
+    <ion-card-header>
+      <ion-card-title>Reporte de Producción</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label class="small-text">Tiempo de crecimiento de la caña:</ion-label>
+        <ion-text class="small-text">{{ tiempoCrecimiento }}</ion-text>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="small-text">Programación de la fertilización:</ion-label>
+        <ion-text class="small-text">{{ programacionFertilizacion }}</ion-text>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="small-text">Estimación de la producción:</ion-label>
+        <ion-text class="small-text">{{ estimacionProduccion }}</ion-text>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="small-text">Fecha estimada de producción:</ion-label>
+        <ion-text class="small-text">{{ fechaProduccion | date:'dd/MM/yyyy' }}</ion-text>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="small-text">Fecha estimada de cosecha:</ion-label>
+        <ion-text class="small-text">{{ fechaCosecha | date:'dd/MM/yyyy' }}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
