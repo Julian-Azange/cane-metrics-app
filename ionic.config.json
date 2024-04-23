@@ -1,0 +1,7 @@
+{
+  "name": "cane-metrics",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
